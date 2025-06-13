@@ -1,0 +1,26 @@
+name: aws_ivs_flutter
+description: AWS Interactive Video Service (IVS) player plugin for Flutter. Provides live video streaming capabilities for Android and iOS.
+version: 1.0.0
+homepage: https://github.com/AungYeZawDev/aws_ivs_flutter
+
+environment:
+  sdk: ">=2.17.0 <4.0.0"
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.aws_ivs_flutter
+        pluginClass: AwsIvsFlutterPlugin
+      ios:
+        pluginClass: AwsIvsFlutterPlugin
