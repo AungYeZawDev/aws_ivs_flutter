@@ -8,7 +8,7 @@ import 'package:flutter/services.dart';
 class AwsIvsPlayer {
   static const MethodChannel _channel = MethodChannel('aws_ivs_flutter');
   static const String viewType = 'aws_ivs_player_view';
-  
+
   /// Create player with stream URL
   static Future<String?> createPlayer(String streamUrl) async {
     try {
@@ -21,7 +21,7 @@ class AwsIvsPlayer {
       return null;
     }
   }
-  
+
   /// Start playback
   static Future<String?> play() async {
     try {
@@ -32,7 +32,7 @@ class AwsIvsPlayer {
       return null;
     }
   }
-  
+
   /// Pause playback
   static Future<String?> pause() async {
     try {
@@ -43,7 +43,7 @@ class AwsIvsPlayer {
       return null;
     }
   }
-  
+
   /// Stop playback
   static Future<String?> stop() async {
     try {
@@ -54,7 +54,7 @@ class AwsIvsPlayer {
       return null;
     }
   }
-  
+
   /// Load new stream URL
   static Future<String?> loadStream(String streamUrl) async {
     try {
@@ -67,7 +67,7 @@ class AwsIvsPlayer {
       return null;
     }
   }
-  
+
   /// Set volume (0.0 to 1.0)
   static Future<String?> setVolume(double volume) async {
     try {
@@ -80,7 +80,7 @@ class AwsIvsPlayer {
       return null;
     }
   }
-  
+
   /// Get current player state
   static Future<String?> getPlayerState() async {
     try {
@@ -91,7 +91,7 @@ class AwsIvsPlayer {
       return null;
     }
   }
-  
+
   /// Get video duration in milliseconds
   static Future<int?> getDuration() async {
     try {
@@ -102,7 +102,7 @@ class AwsIvsPlayer {
       return null;
     }
   }
-  
+
   /// Get current playback position in milliseconds
   static Future<int?> getPosition() async {
     try {
@@ -113,7 +113,7 @@ class AwsIvsPlayer {
       return null;
     }
   }
-  
+
   /// Seek to position in milliseconds
   static Future<String?> seekTo(int positionMs) async {
     try {
@@ -126,7 +126,7 @@ class AwsIvsPlayer {
       return null;
     }
   }
-  
+
   /// Dispose player and free resources
   static Future<String?> dispose() async {
     try {
@@ -137,7 +137,7 @@ class AwsIvsPlayer {
       return null;
     }
   }
-  
+
   /// Get platform version
   static Future<String?> getPlatformVersion() async {
     try {
@@ -145,6 +145,26 @@ class AwsIvsPlayer {
       return result as String?;
     } catch (e) {
       debugPrint('Error getting platform version: $e');
+      return null;
+    }
+  }
+
+  static Future<int?> getVideoWidth() async {
+    try {
+      final result = await _channel.invokeMethod('getVideoWidth');
+      return result as int?;
+    } catch (e) {
+      debugPrint('Error getting video width: $e');
+      return null;
+    }
+  }
+
+  static Future<int?> getVideoHeight() async {
+    try {
+      final result = await _channel.invokeMethod('getVideoHeight');
+      return result as int?;
+    } catch (e) {
+      debugPrint('Error getting video height: $e');
       return null;
     }
   }

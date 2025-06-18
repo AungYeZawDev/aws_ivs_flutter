@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
 A Flutter plugin that provides AWS Interactive Video Service (IVS) player functionality for both Android and iOS platforms. 
 Supports live video streaming with comprehensive playback controls.
                        DESC
-  s.homepage         = 'https://github.com/AungYeZawDev/aws_ivs_flutter'
+  s.homepage         = 'https://github.com/example/aws_ivs_flutter'
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Your Name' => 'your.email@example.com' }
   s.source           = { :path => '.' }
